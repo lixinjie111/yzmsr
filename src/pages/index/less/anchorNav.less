@@ -1,0 +1,61 @@
+@anchorNav-height: 64px;
+
+.anchorNav-page {
+  padding: 0;
+  height: @anchorNav-height;
+
+  .anchorNav {
+    list-style: none;
+    height: @anchorNav-height;
+    line-height: @anchorNav-height;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      display: block;
+      color: #646464;
+      padding: 0 1em;
+      font-size: 16px;
+      line-height: 60px;
+      border-bottom: #fafafa solid 2px;
+      transition: all .3s;
+
+      &:hover,
+      &.actived {
+        color: #000;
+        border-color: #005ad7;
+      }
+    }
+  }
+}
+
+#anchorNav {
+  height: @anchorNav-height;
+}
+
+@media screen and (max-width: 767px) {
+  #anchorNav {
+    .anchorNav-page {
+      padding: 0 24px;
+
+      .anchorNav {
+        a {
+          font-size: 12px;
+          padding: 0 .5em;
+        }
+
+        li {
+          &:first-child a {
+            padding-left: 0;
+          }
+
+          &:last-child a {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

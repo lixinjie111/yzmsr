@@ -1,0 +1,118 @@
+.trading-page {
+  padding-top: 0;
+
+  .line {
+    float: left;
+    height: 100px;
+    width: 30%;
+    @border-val: #979797 solid 1px;
+    @margin-val: 19%;
+
+    &.lt {
+      margin-left: @margin-val;
+      border-right: @border-val;
+      border: none;
+    }
+
+    &.lb {
+      margin-left: @margin-val;
+      border: @border-val;
+      border-bottom: none;
+      border: none;
+    }
+
+    &.rb {
+      border-top: @border-val;
+      border-right: @border-val;
+      border: none;
+    }
+  }
+
+  @transition-val: all .3s ease-in-out;
+
+  .feature {
+    float: left;
+    width: 30%;
+    min-height: 450px;
+    margin: 0 2.5%;
+    background: #fff;
+    cursor: pointer;
+    transition: @transition-val;
+
+    &.left {
+      margin-left: 0;
+    }
+
+    &.right {
+      margin-right: 0;
+    }
+
+    h2 {
+      font-size: 32px;
+      line-height: 42px;
+      text-align: center;
+      padding: 2em 0;
+      background: #f6f6f6;
+      transition: @transition-val;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6em;
+      padding: 1.5em;
+    }
+
+    &:hover {
+      h2 {
+        background: #fff;
+      }
+
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .trading-page {
+    background-color: #fff;
+    padding: 0 0 56px 0 !important;
+    padding-bottom: 56px;
+
+    .line {
+      display: none;
+    }
+
+    .feature {
+      float: none;
+      width: 100%;
+      min-height: initial;
+      margin: 0;
+
+      h2 {
+        font-size: 28px;
+        text-align: 36px;
+        background: #fff;
+        position: relative;
+        &::after{
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-width: 5vw;
+          border-style: solid;
+          border-color: #fff transparent transparent;
+          position: absolute;
+          bottom: -10vw;
+          left: 45%;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 23px;
+        background: #f6f6f6;
+        padding: 2em 5em;
+      }
+    }
+  }
+}

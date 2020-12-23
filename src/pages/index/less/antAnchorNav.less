@@ -1,0 +1,57 @@
+@anchorNav-height: 64px;
+
+#anchorNav {
+  height: @anchorNav-height;
+
+  .ant-anchor-wrapper {
+    background-color: #fafafa;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .ant-anchor-ink {
+    display: none;
+  }
+
+  .ant-anchor-link {
+    display: inline-block;
+    padding: 0 1em;
+    line-height: 61px;
+    border-bottom: #fafafa solid 3px;
+    transition: all .3s;
+  }
+
+  .ant-anchor-link-title {
+    color: #646464;
+    font-size: 16px;
+  }
+
+  .ant-anchor-link-active {
+    border-color: #005ad7;
+
+    &>.ant-anchor-link-title {
+      color: #000;
+    }
+  }
+
+  .ant-affix {
+    height: 64px!important;
+    background-color: #fafafa;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #anchorNav {
+    .anchorNav-page {
+      padding: 0 24px;
+    }
+
+    .ant-anchor-link {
+      padding: 0 .5em;
+    }
+
+    .ant-anchor-link-title {
+      font-size: 12px;
+    }
+  }
+}

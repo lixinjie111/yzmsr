@@ -1,0 +1,106 @@
+@content1: content1;
+.@{content1}-wrapper {
+  height: 100%;
+  min-height: 907px;
+  .@{content1} {
+    height: 100%;
+    padding-top: 0;
+    width: 100vw;
+    &-img {
+      height: 100%;
+      transform-origin: top;
+      padding: 0;
+      padding-right: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        display: block;
+        width: 100%;
+      }
+      .img_meta-x_f{
+        position: absolute;
+        width: 80%;
+        top: 22%;
+        left: 6%;
+      }
+    }
+    &-text {
+      padding: 0;
+      height: 100%;
+      min-height: 740px;
+      .@{content1}-content,
+      .@{content1}-title {
+        position: relative !important;
+      }
+      .@{content1}-title {
+        font-size: 36px;
+        margin-top: 120px;
+        margin-bottom: 1em;
+        display: inline-block;
+        &::after{
+          content: '';
+          top: 15px;
+          right: -1em;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          background: #ec003b;
+          border-radius: 10px;
+        }
+      }
+      .content {
+        margin-top: 20px;
+      }
+      .@{content1}-content{
+        color: #333333;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{content1}-wrapper {
+    height: auto;
+    .@{content1} {
+      &-img {
+        height: auto;
+        padding: 0;
+        text-align: center;
+        z-index: -1;
+        span {
+          display: inline-block;
+          width: 180px;
+          height: 200px;
+          line-height: 200px;
+          margin: auto;
+        }
+      }
+      &-text {
+        height: auto;
+        min-height: 500px;
+        margin-bottom: 20px;
+        padding: 0 24px;
+        .@{content1}-content,
+        .@{content1}-title {
+          top: auto;
+        }
+        .@{content1}-title {
+          margin: 2em auto;
+          font-size: 28px;
+          &::after{
+            top: 10px;
+            right: -1em;
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+          }
+        }
+        .@{content1}-content{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

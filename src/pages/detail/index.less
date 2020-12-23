@@ -1,0 +1,91 @@
+.detail-wrapper {
+  background-color: #f6f6f6;
+  padding-top: 128px;
+  .title-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    transform: translateY(-50px);
+    h1 {
+      font-size: 72px;
+      margin-bottom: .5em;
+    }
+    p{
+      font-size: 20px;
+      line-height: 2em;
+    }
+  }
+
+  .cover-wrapper{
+    z-index: -1;
+    transform: translateY(100px);
+  }
+
+  .cover-img {
+    width: 100%;
+  }
+  .cover-txt{
+    position: absolute;
+    z-index: -1;
+    top: 40%;
+    font-size: 120px;
+    color: #fff;
+  }
+  .intro-page{
+    min-height: 450px;
+    h1{
+      display: block;
+      text-align: center;
+      font-size: 36px;
+      padding-bottom: 1.5em;
+    }
+    p{
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.6em;
+      padding-bottom: 1em;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .detail-wrapper {
+    padding-top: 64px;
+    .title-wrapper {
+      transform: translateY(10px);
+      h1 {
+        font-size: 44px;
+        line-height: 52px;
+        margin-bottom: .5em;
+      }
+      p{
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    .cover-wrapper{
+      transform: translateY(0px);
+    }
+    .cover-txt{
+      top: 20%;
+      font-size: 57px;
+      line-height: 74px;
+    }
+    .intro-page{
+      min-height: 400px;
+      h1{
+        font-size: 28px;
+        line-height: 36px;
+      }
+      p{
+        font-size: 14px;
+        line-height: 23px;
+      }
+    }
+  }
+}
+
+@import './less/trading.less';
+@import './less/design.less';

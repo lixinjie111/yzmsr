@@ -1,0 +1,160 @@
+.design-page {
+  .feature {
+    &:first-child {
+      margin-bottom: 128px;
+    }
+
+    .title {
+      border-bottom: #cfcfcf solid 1px;
+
+      h2 {
+        display: inline-block;
+        font-size: 32px;
+        line-height: 1.1em;
+        padding-right: 1em;
+        padding-bottom: .5em;
+        border-bottom: #0f90f1 solid 1px;
+        margin-bottom: -1px;
+        border-right: #fafafa solid 10px;
+      }
+    }
+
+    .content {
+      margin-top: 1em;
+      margin-bottom: 10em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .left,
+      .right {
+        float: left;
+        width: 45%;
+      }
+
+      .left {
+        margin-right: 5%;
+      }
+
+      .right {
+        float: right;
+        margin-left: 5%;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.4em;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 1.35em;
+      }
+
+      ul {
+        font-size: 16px;
+        line-height: 2.25em;
+
+        li {
+          color: #0f90f1;
+
+          span {
+            color: #666666;
+          }
+        }
+      }
+
+      .cover-txt {
+        position: relative;
+        z-index: -1;
+        font-size: 120px;
+        color: #f5f5f5;
+        bottom: 2em;
+
+        &.second {
+          left: 1em;
+          bottom: 1em;
+        }
+
+        &.online {
+          bottom: 1em;
+        }
+      }
+
+      .cover-mobi {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .design-page {
+    .feature {
+      margin-bottom: 0;
+
+      .title {
+        h2 {
+          font-size: 28px;
+          line-height: 36px;
+        }
+      }
+
+      .content {
+        padding-bottom: 3em;
+        padding-left: .5em;
+        margin-bottom: 2em;
+        border-bottom: #cfcfcf solid 1px;
+
+        &:first-child,
+        &:last-child {
+          padding-bottom: none;
+          border-bottom: none;
+        }
+
+        .left,
+        .right {
+          float: none;
+          width: 100%;
+          margin: 0;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 23px;
+        }
+
+        h3 {
+          font-size: 16px;
+          line-height: 24px;
+          padding: 2em 0;
+        }
+
+        ul {
+          font-size: 14px;
+          line-height: 23px;
+        }
+
+        .cover-txt {
+          display: none;
+          font-size: 45px;
+          bottom: unset;
+          top: 0;
+
+          &.second {
+            left: 0;
+          }
+        }
+
+        .cover-mobi {
+          position: relative;
+          display: block;
+          margin-bottom: -2em;
+        }
+
+      }
+
+    }
+  }
+}

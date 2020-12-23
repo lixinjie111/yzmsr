@@ -1,0 +1,158 @@
+body,
+html {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#main-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  visibility: hidden;
+  background: #fafafa;
+}
+
+canvas#main-canvas {
+  width: 100%;
+  height: 100%;
+  background: #fafafa
+}
+
+.ambient-callout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  max-width: 20em;
+  font: 14px/1em Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  color: #101820
+}
+
+.ambient-callout .contents {
+  position: relative;
+  -webkit-transform: translate3d(0, -15px, 0);
+  transform: translate3d(0, -15px, 0);
+  overflow: hidden
+}
+
+.ambient-callout.left .contents {
+  -webkit-transform: translate3d(-100%, -15px, 0);
+  transform: translate3d(-100%, -15px, 0)
+}
+
+.ambient-callout .inner-contents {
+  padding: .5em;
+  color: #fff;
+  background: #0f90f1;
+  border-radius: 5px;
+}
+
+.ambient-callout .inner-contents {
+  margin-left: 24px
+}
+
+.ambient-callout.left .inner-contents {
+  margin-left: 0;
+  margin-right: 24px
+}
+
+.ambient-callout.pulse-arc .inner-contents {
+  margin-left: 36px
+}
+
+.ambient-callout.pulse-arc.left .inner-contents {
+  margin-left: 0;
+  margin-right: 36px
+}
+
+.ambient-callout {
+  -webkit-transition: opacity .35s;
+  transition: opacity .35s
+}
+
+.ambient-callout.deemphasize {
+  opacity: .2
+}
+
+.ambient-callout .inner-contents {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  opacity: 0
+}
+
+.ambient-callout.in .inner-contents {
+  opacity: 1
+}
+
+@media screen and (max-width:769px) {
+  .ambient-callout {
+    top: -25vh;
+    font-size: 14px;
+  }
+}
+
+#main-key {
+  position: absolute;
+  right: 6vh;
+  bottom: 6vh
+}
+
+#key-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none
+}
+
+#key-list li {
+  position: relative;
+  font: 13px/1.4em Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-align: right;
+  margin: 0;
+  padding: .3em 0;
+  color: #101820
+}
+
+#key-list li span {
+  opacity: .25;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s
+}
+
+#key-list li.selected .progress,
+#key-list li.selected span {
+  opacity: 1
+}
+
+#key-list li {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s
+}
+
+#key-list.in li {
+  opacity: 1
+}
+
+#key-list li+li {
+  -webkit-transition-delay: .33s;
+  transition-delay: .33s
+}
+
+#key-list li+li+li {
+  -webkit-transition-delay: .66s;
+  transition-delay: .66s
+}
+
+#key-list li+li+li+li {
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s
+}

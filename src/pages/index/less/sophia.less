@@ -1,0 +1,111 @@
+@content2: content2;
+.@{content2}-wrapper {
+  min-height: 750px;
+  .@{content2} {
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 0;
+    width: 100vw;
+    &-img {
+      height: 100%;
+      transform-origin: top;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        display: block;
+        width: 100%;
+      }
+      .img_sophia_f{
+        position: absolute;
+        width: 91%;
+        top: 0;
+        left: 12%;
+      }
+    }
+    &-text {
+      padding: 0;
+      height: 100%;
+      min-height: 430px;
+      a{
+        color: unset;
+      }
+      .@{content2}-content,
+      .@{content2}-title {
+        position: relative !important;
+      }
+      .@{content2}-title {
+        font-size: 36px;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        display: inline-block;
+        &::after{
+          content: '';
+          top: 15px;
+          right: -1em;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          background: #ec003b;
+          border-radius: 10px;
+        }
+      }
+      .@{content2}-content{
+        font-size: 16px;
+        color: #333333;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{content2}-wrapper {
+    height: auto;
+    .@{content2} {
+      padding-top: 0;
+      &-img {
+        height: auto;
+        padding: 0;
+        text-align: center;
+        z-index: -1;
+        span {
+          display: inline-block;
+          width: 180px;
+          height: 200px;
+          line-height: 200px;
+          margin: auto;
+        }
+        .img_sophia_f{
+          position: absolute;
+          width: 99%;
+          top: 0;
+          left: 9%;
+        }
+      }
+      &-text {
+        height: auto;
+        margin-bottom: 20px;
+        padding: 0 24px;
+        .@{content2}-content,
+        .@{content2}-title {
+          top: auto;
+        }
+        .@{content2}-title {
+          margin: 2em auto;
+          font-size: 28px;
+          &::after{
+            top: 10px;
+            right: -1em;
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+          }
+        }
+        .@{content2}-content{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

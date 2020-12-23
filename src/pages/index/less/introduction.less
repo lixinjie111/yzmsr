@@ -1,0 +1,44 @@
+.intro-wrapper {
+  margin-top: 100vh;
+  min-height: 550px;
+  background-color: #1a1a24;
+  color: #bcbcbc;
+  .home-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .intro-title {
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+  .intro-content {
+    font-size: 16px;
+
+    p {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro-wrapper {
+
+    .intro-title {
+      font-size: 28px;
+    }
+  
+    .intro-content {
+      font-size: 14px;
+  
+      p {
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
