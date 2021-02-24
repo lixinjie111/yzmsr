@@ -5,7 +5,7 @@
 Install dependencies,
 
 ```bash
-$ yarn
+$ yarn;umi build
 ```
 
 Start the dev server,
