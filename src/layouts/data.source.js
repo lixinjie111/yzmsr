@@ -1,11 +1,11 @@
 import React from 'react';
-import { BusinessType } from '@/component/businessType'
+import { BusinessType } from '@/component/businessType';
 
 /**
  * 生成业务链接字符
  * @param {string} type 业务类型值
  */
-const GenerateLink = (type) => `/detail?type=${type}`
+const GenerateLink = type => `/detail?type=${type}`;
 
 const businessMenus = [
   {
@@ -48,18 +48,20 @@ const businessMenus = [
     text: '智慧商业',
     href: GenerateLink(BusinessType.Business),
   },
-]
+];
 
 const renderBusinessMenus = businessMenus.map(menu => ({
   children: {
     className: 'businessSubMenu',
     href: menu.href,
-    children: [{
-      children: menu.text,
-      name: 'text',
-    }]
-  }
-}))
+    children: [
+      {
+        children: menu.text,
+        name: 'text',
+      },
+    ],
+  },
+}));
 
 export const NavDataSource = {
   page: { className: 'home-page' },
@@ -139,9 +141,7 @@ export const NavDataSource = {
             },
           ],
         },
-        subItem: [
-          ...renderBusinessMenus
-        ],
+        subItem: [...renderBusinessMenus],
       },
     ],
   },
@@ -175,7 +175,7 @@ export const FooterDataSource = {
               name: 'link0',
               children: (
                 <span>
-                  <p>660178@gdpr.com</p>
+                  <p>guoyaxi@yuanzhi.com</p>
                 </span>
               ),
             },
@@ -265,19 +265,27 @@ export const FooterDataSource = {
         className: 'block qrGroup',
         title: {
           className: 'logo',
-          children: (<img src={require('../assets/logo.png')} width="100%" alt="img" />),
+          children: (
+            <img src={require('../assets/logo.png')} width="100%" alt="img" />
+          ),
         },
         childWrapper: {
           children: [
             {
               className: 'qrcode',
               name: 'content0',
-              children: (<img src={require('../assets/qrcode.png')} width="100%" alt="img" />),
+              children: (
+                <img
+                  src={require('../assets/qrcode.png')}
+                  width="100%"
+                  alt="img"
+                />
+              ),
             },
             {
               className: 'qrcodeTxt',
               name: 'content1',
-              children: (<p>官方微信</p>)
+              children: <p>官方微信</p>,
             },
           ],
         },
@@ -291,9 +299,20 @@ export const FooterDataSource = {
     children: (
       <span>
         Copyright©2019 元知科技.&nbsp;All rights reserved.&nbsp;
-        <a href="http://www.beian.miit.gov.cn/" target="_blank">京ICP备20018041号-2</a>
-        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041863" target="_blank">
-          <img src={require('@/assets/miit.png')} height="14" width="14" style={{display:'inline-block',margin:'-3px 5px 0'}} />京公网安备11010502041863号
+        <a href="http://www.beian.miit.gov.cn/" target="_blank">
+          京ICP备20018041号-2
+        </a>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041863"
+          target="_blank"
+        >
+          <img
+            src={require('@/assets/miit.png')}
+            height="14"
+            width="14"
+            style={{ display: 'inline-block', margin: '-3px 5px 0' }}
+          />
+          京公网安备11010502041863号
         </a>
       </span>
     ),
