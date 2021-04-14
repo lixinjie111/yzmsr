@@ -1,5 +1,9 @@
 import React from 'react';
 import { BusinessType } from '@/component/businessType';
+import {
+  AchievementType,
+  GenerateAchievementUrl,
+} from '@/component/achievementType';
 
 /**
  * 生成业务链接字符
@@ -57,6 +61,19 @@ const renderBusinessMenus = businessMenus.map(menu => ({
     children: [
       {
         children: menu.text,
+        name: 'text',
+      },
+    ],
+  },
+}));
+
+const renderAchievementMenus = AchievementType.map(achievement => ({
+  children: {
+    className: 'businessSubMenu',
+    href: GenerateAchievementUrl(achievement.type),
+    children: [
+      {
+        children: achievement.name,
         name: 'text',
       },
     ],
@@ -142,6 +159,24 @@ export const NavDataSource = {
           ],
         },
         subItem: [...renderBusinessMenus],
+      },
+      {
+        name: 'item4',
+        className: 'header0-item',
+        children: {
+          href: './#Achievement',
+          children: [
+            {
+              children: (
+                <span>
+                  <p>研究成果</p>
+                </span>
+              ),
+              name: 'text',
+            },
+          ],
+        },
+        subItem: [...renderAchievementMenus],
       },
     ],
   },
