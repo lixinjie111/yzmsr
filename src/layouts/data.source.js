@@ -1,8 +1,8 @@
 import React from 'react';
 import { BusinessType } from '@/component/businessType';
 import {
-  AchievementType,
-  GenerateAchievementUrl,
+  AchievementTypes,
+  generateAchievementUrl,
 } from '@/component/achievementType';
 
 /**
@@ -67,10 +67,10 @@ const renderBusinessMenus = businessMenus.map(menu => ({
   },
 }));
 
-const renderAchievementMenus = AchievementType.map(achievement => ({
+const renderAchievementMenus = AchievementTypes.map(achievement => ({
   children: {
     className: 'businessSubMenu',
-    href: GenerateAchievementUrl(achievement.type),
+    href: generateAchievementUrl(achievement.type),
     children: [
       {
         children: achievement.name,

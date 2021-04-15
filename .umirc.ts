@@ -1,6 +1,9 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
+  define: {
+    'process.env.API_HOST': 'http://api.yzmsri.com/',
+  },
   nodeModulesTransform: {
     type: 'none',
   },
@@ -25,6 +28,16 @@ export default defineConfig({
       routes: [
         { exact: true, path: '/', component: '@/pages/index' },
         { exact: true, path: '/detail', component: '@/pages/detail' },
+        {
+          exact: true,
+          path: '/achievements/:type',
+          component: '@/pages/achievements/index',
+        },
+        {
+          exact: true,
+          path: '/achievements/:type/articals/:id',
+          component: '@/pages/achievements/id',
+        },
         { path: '*', component: '@/pages/404' },
       ],
     },
