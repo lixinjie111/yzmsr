@@ -49,4 +49,30 @@ export default {
       total: 20,
     },
   },
+  'POST /document/documentDetail': {
+    code: 200,
+    msg: '',
+    data: {
+      documentId: '1',
+      title:
+        '当客户端（浏览器）发送请求，如：GET /api/users，那么本地启动的 umi dev 会跟此配置文件匹配请求路径以及方法，如果匹配到了，就会将请求通过配置处理，就可以像样例一样，你可以直接返回数据，也可以通过函数处理以及重定向到另一个服务器。',
+      titleSecond:
+        '当客户端（浏览器）发送请求，如：GET /api/users，那么本地启动的 umi dev 会跟此配置文件匹配请求路径以及方法，如果匹配到了，就会将请求通过配置处理，就可以像样例一样，你可以直接返回数据，也可以通过函数处理以及重定向到另一个服务器。',
+      pictureAttachment: {
+        id: '1',
+        url: 'http://www.yzmsri.com/static/%E6%95%99%E8%82%B2.4f60870a.png',
+        name: 'test',
+      },
+      publishDateFormat: '2020-10-23 09:00:00',
+      source: 'test test test',
+      attachmentsList: [
+        {
+          id: '1',
+          name: '当客户端（浏览器）发送请求.pdf',
+          link: 'http://www.yzmsri.com/static/%E6%95%99%E8%82%B2.4f60870a.png',
+        },
+      ],
+      documentText: '',
+    },
+  },
 };
