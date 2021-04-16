@@ -6,9 +6,9 @@
   position: fixed;
   background-color: rgba(0, 0, 0, 0);
   top: 0;
-  transition: top .3s ease-in-out;
+  transition: top 0.3s ease-in-out;
 
-  &.header-dark{
+  &.header-dark {
     background-color: #1a1a24;
   }
 
@@ -40,12 +40,13 @@
       line-height: 62px;
       height: 64px;
 
-      a,p {
+      a,
+      p {
         display: block;
         color: #fff;
-        &:hover{
+        &:hover {
           color: #bfbfbf;
-          p{
+          p {
             color: #bfbfbf;
           }
         }
@@ -57,7 +58,7 @@
     &-block {
       padding: 0 8px;
 
-      >* {
+      > * {
         display: inline-block;
       }
     }
@@ -66,7 +67,6 @@
   &-item,
   &-item-child,
   &-menu {
-
     .ant-menu-sub .ant-menu-item,
     .ant-menu-inline .ant-menu-item {
       height: auto;
@@ -103,23 +103,41 @@
 }
 
 [id='item3$Menu'] {
-  background: #fff!important;
-  max-width: 200px!important;
-  margin-top: -1em!important;
-  padding: 10px!important;
-  .ant-menu-item{
+  background: #fff !important;
+  max-width: 200px !important;
+  margin-top: -1em !important;
+  padding: 10px !important;
+  .ant-menu-item {
     display: inline-block;
-    margin: 8px 0!important;
+    margin: 8px 0 !important;
   }
-  .businessSubMenu{
-    color: #666!important;
-    &:hover{
-      color: #2373ff!important;
+  .businessSubMenu {
+    color: #666 !important;
+    &:hover {
+      color: #2373ff !important;
     }
   }
 }
 
-.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover{
+[id='item4$Menu'] {
+  background: #fff !important;
+  max-width: 80px !important;
+  min-width: 80px !important;
+  margin-top: -1em !important;
+  padding: 10px !important;
+  .ant-menu-item {
+    display: inline-block;
+    margin: 8px 0 !important;
+  }
+  .achievementSubMenu {
+    color: #666 !important;
+    &:hover {
+      color: #2373ff !important;
+    }
+  }
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
   background-color: transparent;
 }
 
@@ -136,15 +154,16 @@
   }
 
   .ant-menu-horizontal {
-    a,p{
+    a,
+    p {
       color: #666;
     }
   }
 }
-.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected{
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
   background-color: unset;
-  a{
-    color: #2373ff!important;
+  a {
+    color: #2373ff !important;
   }
 }
 
@@ -164,9 +183,9 @@
       float: inherit;
       position: relative;
       left: -24px;
-      width: ~"calc(100% + 48px)";
+      width: ~'calc(100% + 48px)';
       opacity: 0;
-      transition: opacity .3s @ease-in-out;
+      transition: opacity 0.3s @ease-in-out;
 
       & li {
         padding: 0 24px;
@@ -197,7 +216,7 @@
         height: 2px;
         background: #fff;
         margin-top: 4px;
-        transition: transform .3s @ease-in-out, opacity .3s @ease-in-out;
+        transition: transform 0.3s @ease-in-out, opacity 0.3s @ease-in-out;
       }
 
       :first-child {
@@ -233,7 +252,7 @@
         }
       }
 
-      >.@{header0}-menu {
+      > .@{header0}-menu {
         opacity: 1;
         pointer-events: auto;
       }
@@ -244,14 +263,14 @@
     }
   }
 
-  .ant-menu-sub{
-    background: #1b1829!important;
-    max-width: initial!important;
-    .ant-menu-item{
-      display: block!important;
-      margin: 4px 0 8px 0!important;
+  .ant-menu-sub {
+    background: #1b1829 !important;
+    max-width: initial !important;
+    .ant-menu-item {
+      display: block !important;
+      margin: 4px 0 8px 0 !important;
     }
-    &.ant-menu-inline{
+    &.ant-menu-inline {
       padding-bottom: 16px;
     }
   }

@@ -69,7 +69,7 @@ const renderBusinessMenus = businessMenus.map(menu => ({
 
 const renderAchievementMenus = AchievementTypes.map(achievement => ({
   children: {
-    className: 'businessSubMenu',
+    className: 'achievementSubMenu',
     href: generateAchievementUrl(achievement.type),
     children: [
       {

@@ -6,6 +6,7 @@ import {
   AchievementTypes,
   findAchievementTypeByType,
   generateAchievementUrl,
+  generateAchievementArticalUrl,
 } from '@/component/achievementType';
 import { Parallax, OverPack } from 'rc-scroll-anim';
 import QueueAnim from 'rc-queue-anim';
@@ -16,11 +17,36 @@ const { Item } = Menu;
 
 const DEFAULT_PAGE_SIZE = 8;
 
-const ArticalAbstract = ({ artical }) => {
-  console.log('artical', artical);
+const LeftMenu = ({ selected }) => {
   return (
-    <Row key={artical.documentId}>
-      <div className="artical-abstract">
+    <div className="left-menu">
+      {AchievementTypes.map(achievement => {
+        let className = 'menu-item';
+        if (achievement.type === selected) {
+          className += ' selected-item';
+        }
+        return (
+          <div className={className} key={achievement.type}>
+            <a href={generateAchievementUrl(achievement.type)}>
+              {achievement.name}
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const ArticalAbstract = ({ artical, index, type }) => {
+  let className = 'artical-abstract';
+  if (index % 2 === 0) {
+    className += ' first-column';
+  } else {
+    className += ' second-column';
+  }
+  return (
+    <div className={className} key={artical.documentId}>
+      <a href={generateAchievementArticalUrl(type, artical.documentId)}>
         <img
           src={artical.pictureAttachment.link}
           className="artical-cover"
@@ -31,8 +57,8 @@ const ArticalAbstract = ({ artical }) => {
           <div className="artical-time">{artical.publishDateFormat}</div>
           <div className="artical-desc">{artical.description}</div>
         </div>
-      </div>
-    </Row>
+      </a>
+    </div>
   );
 };
 
@@ -42,7 +68,7 @@ const generateRequest = body => ({
   body: JSON.stringify(body),
 });
 
-const generateNetworkResultNode = (loading, articals, error) => {
+const generateNetworkResultNode = (loading, articals, error, type) => {
   if (loading) {
     return <Spin size="large" />;
   }
@@ -52,9 +78,9 @@ const generateNetworkResultNode = (loading, articals, error) => {
 
   return (
     <Row className="artical-abstract-list-container">
-      {articals.map(artical => (
+      {articals.map((artical, index) => (
         <Col md={12} xs={24} key={artical.documentId}>
-          <ArticalAbstract artical={artical} />
+          <ArticalAbstract artical={artical} index={index} type={type} />
         </Col>
       ))}
     </Row>
@@ -97,8 +123,8 @@ const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
 
   return (
     <>
-      <div id="detail" className="home-page-wrapper achievement-wrapper">
-        <Row className="home-page">
+      <div id="detail" className="home-page-wrapper">
+        <Row className="home-page detail-wrapper">
           <Parallax
             component={Col}
             animation={{
@@ -128,35 +154,27 @@ const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
           </Parallax>
           <p className="cover-txt" {...Achievement.cover.txt}></p>
         </Row>
-        <Row className="home-page">
-          <Col md={4} xs={24}>
-            <Menu
-              mode={isMobile ? 'horizontal' : 'vertical'}
-              defaultSelectedKeys={[AchievementTypes[0].type]}
-              theme="dark"
-            >
-              {AchievementTypes.map(achievement => (
-                <Item key={achievement.type}>
-                  <a href={generateAchievementUrl(achievement.type)}>
-                    {achievement.name}
-                  </a>
-                </Item>
-              ))}
-            </Menu>
-          </Col>
-          <Col md={20} xs={24}>
-            {generateNetworkResultNode(loading, articals, error)}
-          </Col>
-        </Row>
-        <Row className="home-page">
-          <Pagination
-            defaultCurrent={1}
-            total={total}
-            current={page}
-            defaultPageSize={DEFAULT_PAGE_SIZE}
-            onChange={changePage}
-          />
-        </Row>
+      </div>
+      <div className="achievement-wrapper">
+        <div className="home-page">
+          <div className="content-container">
+            <div className="left-content">
+              <LeftMenu selected={type} />
+            </div>
+            <div className="right-content">
+              {generateNetworkResultNode(loading, articals, error, type)}
+            </div>
+          </div>
+          <div className="pagination-container">
+            <Pagination
+              defaultCurrent={1}
+              total={total}
+              current={page}
+              defaultPageSize={DEFAULT_PAGE_SIZE}
+              onChange={changePage}
+            />
+          </div>
+        </div>
       </div>
     </>
   );
