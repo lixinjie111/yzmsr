@@ -72,7 +72,30 @@ export default {
           link: 'http://www.yzmsri.com/static/%E6%95%99%E8%82%B2.4f60870a.png',
         },
       ],
-      documentText: '',
+      documentText: `
+&lt;blockquote&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
+.box{
+  display: flex;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;行内元素也可以使用 Flex 布局。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
+.box{
+  display: inline-flex;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Webkit 内核的浏览器，必须加上&lt;code&gt;-webkit&lt;/code&gt;前缀。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;
+.box{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+      `,
     },
   },
 };

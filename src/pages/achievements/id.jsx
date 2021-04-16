@@ -4,8 +4,11 @@ import { DownloadOutlined } from '@ant-design/icons';
 import { useParams, useRequest } from 'umi';
 import { Parallax, OverPack } from 'rc-scroll-anim';
 import QueueAnim from 'rc-queue-anim';
+import { decodeHTMLSpecialChars } from '../../component/utils';
 
 import './id.less';
+
+const pdfIcon = require('@/assets/achievement/icon_file_pdf@2x.png');
 
 const generateRequest = body => ({
   url: '/document/documentDetail',
@@ -14,8 +17,10 @@ const generateRequest = body => ({
 });
 
 const Artical = ({ artical }) => {
-  console.log('in artical', artical);
   const attachments = (artical ? artical.attachmentsList : []) || [];
+  const text = artical.documentText
+    ? decodeHTMLSpecialChars(artical.documentText)
+    : '';
 
   return (
     <div className="artical">
@@ -25,12 +30,13 @@ const Artical = ({ artical }) => {
         <span className="source">{artical.source}</span>
         <span className="time">{artical.publishDateFormat}</span>
       </div>
-      <div className="content">{artical.documentText}</div>
+      <div className="content" dangerouslySetInnerHTML={{ __html: text }} />
       {attachments.length > 0 && (
         <div className="download-container">
           <div className="intro">请点击下方下载按钮获取完整报告</div>
           {attachments.map(attachment => (
             <a key={attachment.id} href={attachment.link} className="download">
+              <img src={pdfIcon} className="file-icon"></img>
               <span className="name">{attachment.name}</span>
               <DownloadOutlined className="download-icon" />
             </a>
@@ -41,7 +47,6 @@ const Artical = ({ artical }) => {
   );
 };
 const generateNetworkResultNode = (loading, artical, error) => {
-  console.log('in generate', artical);
   if (loading) {
     return <Spin size="large" />;
   } else if (error) {
@@ -54,15 +59,12 @@ const generateNetworkResultNode = (loading, artical, error) => {
 };
 
 const ArticalPage = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
-  const params = useParams();
-  console.log(params);
   const { type, id } = useParams();
   const { data, error, loading, run } = useRequest(generateRequest, {
     manual: true,
   });
 
   const artical = data;
-  console.log({ data, error, loading });
 
   useEffect(() => {
     run({

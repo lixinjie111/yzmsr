@@ -97,8 +97,6 @@ const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
   const articals = data ? (data.list ? data.list : []) : [];
   const total = data ? (data.total ? data.total : 0) : 0;
 
-  console.log({ data, articals, total, error, loading });
-
   const changePage = newPage => {
     setPage(newPage);
   };
