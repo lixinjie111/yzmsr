@@ -94,7 +94,7 @@ export const NavDataSource = {
         name: 'item0',
         className: 'header0-item kgreiilmb9-editor_css',
         children: {
-          href: './',
+          href: '/',
           children: [
             {
               children: (

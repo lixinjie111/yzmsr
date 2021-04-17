@@ -1,0 +1,134 @@
+@import '~antd/lib/style/themes/default.less';
+
+@achievement: achievement;
+.@{achievement}-wrapper {
+  min-height: 400px;
+  .@{achievement} {
+    > p {
+      text-align: center;
+    }
+    &-img-wrapper {
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      .block {
+        margin-bottom: 16px;
+        .achievement-block-content {
+          display: block;
+          background: #fff;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+          border: none;
+          color: @text-color;
+          transition: transform 0.3s @ease-out, box-shadow 0.3s @ease-out;
+          .infoBlock {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1em;
+            color: #dcdcdc;
+            background-color: rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: all 0.3s;
+          }
+          &:hover {
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);
+            .infoBlock {
+              background-color: rgba(0, 0, 0, 0.6);
+              & p {
+                display: block;
+              }
+            }
+          }
+          h1 {
+            color: #fff;
+            font-size: 22px;
+          }
+          img {
+            width: 100%;
+          }
+          & p {
+            font-size: 14px;
+            margin-top: 1em;
+            display: none;
+            width: 100%;
+            line-height: 20px;
+          }
+          &:hover {
+            & p {
+              bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  #block-more {
+    .achievement-block-content {
+      box-shadow: none;
+    }
+    .infoBlock {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .@{achievement}-wrapper {
+    overflow: hidden;
+    .infoBlock {
+      padding: 5px !important;
+      h1 {
+        font-size: 16px !important;
+      }
+      p {
+        font-size: 8px;
+        line-height: 1.3em !important;
+        margin-top: 0.1em !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{achievement}-wrapper {
+    overflow: hidden;
+    .@{achievement}-img-wrapper .block {
+      margin-bottom: 8px;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+    }
+    .@{achievement} {
+      ul {
+        li {
+          display: block;
+          width: 100%;
+          padding: 2%;
+          span {
+            height: 168px;
+          }
+          p {
+            position: relative;
+            bottom: 0;
+          }
+        }
+      }
+    }
+    .title-wrapper {
+      text-align: left;
+      h1 {
+        font-size: 28px;
+        margin-bottom: 2em;
+      }
+      .title-content {
+        font-size: 14px;
+      }
+    }
+  }
+}

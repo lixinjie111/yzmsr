@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Achievement = {
+export const generateAchievementHeaderData = type => ({
   title: {
     children: '研究成果',
   },
@@ -13,10 +13,10 @@ export const Achievement = {
   },
   cover: {
     img: {
-      src: require('@/assets/business/Business.jpg'),
+      src: require(`@/assets/achievement/${type}@2x.png`),
     },
     txt: {
       children: 'Research Findings',
     },
   },
-};
+});

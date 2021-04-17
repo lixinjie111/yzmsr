@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Menu, Pagination, Spin, Result } from 'antd';
 import { useParams, useRequest } from 'umi';
-import { Achievement } from './data/achievement';
+import { generateAchievementHeaderData } from './data/achievement';
 import {
   AchievementTypes,
   findAchievementTypeByType,
@@ -88,6 +88,9 @@ const generateNetworkResultNode = (loading, articals, error, type) => {
 };
 
 const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
+  const [Achievement, setAchievement] = useState(
+    generateAchievementHeaderData(AchievementTypes[0].type),
+  );
   const [page, setPage] = useState(1);
   const { type } = useParams();
   const { data, error, loading, run } = useRequest(generateRequest, {
@@ -100,6 +103,10 @@ const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
   const changePage = newPage => {
     setPage(newPage);
   };
+
+  useEffect(() => {
+    setAchievement(generateAchievementHeaderData(type));
+  }, [type]);
 
   useEffect(() => {
     const achievementType = findAchievementTypeByType(type);
