@@ -68,7 +68,7 @@ export default {
       attachmentsList: [
         {
           id: '1',
-          name: '当客户端（浏览器）发送请求.pdf',
+          name: '当客户端（浏览器）发送请求，如：GET /api/users，那.pdf',
           link: 'http://www.yzmsri.com/static/%E6%95%99%E8%82%B2.4f60870a.png',
         },
       ],
