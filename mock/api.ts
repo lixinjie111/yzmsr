@@ -7,6 +7,7 @@ export default {
         {
           documentId: 1,
           title: '测试一当客户端（浏览器）发送请求',
+          titleSecond: '测试一当客户端（浏览器）发送请求',
           publishDateFormat: '2020-10-20 08:00:00',
           pictureAttachment: {
             id: '1',
@@ -20,6 +21,8 @@ export default {
         {
           documentId: 2,
           title: '测试二当客户端（浏览器）发送请求',
+          titleSecond:
+            '测试二当客户端（浏览器）发送请求那么本地启动的 umi dev 会跟此配置文件匹配请求路径以及方法，',
           publishDateFormat: '2020-10-21 08:00:00',
           pictureUrl: '',
           pictureAttachment: {
@@ -34,6 +37,7 @@ export default {
         {
           documentId: 3,
           title: '测试三当客户端（浏览器）发送请求',
+          titleSecond: '测试三当客户端（浏览器）发送请求',
           publishDateFormat: '2020-10-22 08:00:00',
           pictureUrl: '',
           pictureAttachment: {

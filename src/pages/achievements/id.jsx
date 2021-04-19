@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Menu, Result, Spin } from 'antd';
+import { Row, Col, Menu, Result, Spin, BackTop } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 import { useParams, useRequest } from 'umi';
 import { Parallax, OverPack } from 'rc-scroll-anim';
@@ -43,6 +43,7 @@ const Artical = ({ artical }) => {
           ))}
         </div>
       )}
+      <BackTop></BackTop>
     </div>
   );
 };

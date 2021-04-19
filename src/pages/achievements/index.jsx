@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Menu, Pagination, Spin, Result } from 'antd';
+import { Row, Col, Menu, Pagination, Spin, Tooltip, Result } from 'antd';
 import { useParams, useRequest } from 'umi';
 import { generateAchievementHeaderData } from './data/achievement';
 import {
@@ -44,6 +44,13 @@ const ArticalAbstract = ({ artical, index, type }) => {
   } else {
     className += ' second-column';
   }
+  let popText = '';
+  if (artical.title) {
+    popText += artical.title + ' ';
+  }
+  if (artical.titleSecond) {
+    popText += artical.titleSecond;
+  }
   return (
     <div className={className} key={artical.documentId}>
       <a href={generateAchievementArticalUrl(type, artical.documentId)}>
@@ -53,7 +60,12 @@ const ArticalAbstract = ({ artical, index, type }) => {
           alt={artical.pictureAttachment.name}
         />
         <div className="artical-content">
-          <div className="artical-title">{artical.title}</div>
+          <Tooltip title={popText}>
+            <div className="artical-title">{artical.title}</div>
+          </Tooltip>
+          <Tooltip title={popText}>
+            <div className="artical-subtitle">{artical.titleSecond}</div>
+          </Tooltip>
           <div className="artical-time">{artical.publishDateFormat}</div>
           <div className="artical-desc">{artical.description}</div>
         </div>
@@ -89,7 +101,7 @@ const generateNetworkResultNode = (loading, articals, error, type) => {
 
 const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
   const [Achievement, setAchievement] = useState(
-    generateAchievementHeaderData(AchievementTypes[0].type),
+    generateAchievementHeaderData(),
   );
   const [page, setPage] = useState(1);
   const { type } = useParams();
