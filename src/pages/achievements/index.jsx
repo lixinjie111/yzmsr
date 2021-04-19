@@ -170,15 +170,17 @@ const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
               {generateNetworkResultNode(loading, articals, error, type)}
             </div>
           </div>
-          <div className="pagination-container">
-            <Pagination
-              defaultCurrent={1}
-              total={total}
-              current={page}
-              defaultPageSize={DEFAULT_PAGE_SIZE}
-              onChange={changePage}
-            />
-          </div>
+          {total > DEFAULT_PAGE_SIZE && (
+            <div className="pagination-container">
+              <Pagination
+                defaultCurrent={1}
+                total={total}
+                current={page}
+                defaultPageSize={DEFAULT_PAGE_SIZE}
+                onChange={changePage}
+              />
+            </div>
+          )}
         </div>
       </div>
     </>
