@@ -30,7 +30,11 @@ const Artical = ({ artical }) => {
         <span className="source">{artical.source}</span>
         <span className="time">{artical.publishDateFormat}</span>
       </div>
-      <div className="content" dangerouslySetInnerHTML={{ __html: text }} />
+      <div
+        id="artical_content"
+        className="content"
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></div>
       {attachments.length > 0 && (
         <div className="download-container">
           <div className="intro">请点击下方下载按钮获取完整报告</div>
@@ -43,7 +47,6 @@ const Artical = ({ artical }) => {
           ))}
         </div>
       )}
-      <BackTop></BackTop>
     </div>
   );
 };
@@ -88,6 +91,7 @@ const ArticalPage = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
         <Row className="home-page">
           {generateNetworkResultNode(loading, artical, error)}
         </Row>
+        <BackTop></BackTop>
       </div>
     </>
   );

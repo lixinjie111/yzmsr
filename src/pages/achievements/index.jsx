@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Menu, Pagination, Spin, Tooltip, Result } from 'antd';
-import { useParams, useRequest } from 'umi';
+import { useParams, useRequest, Link } from 'umi';
 import { generateAchievementHeaderData } from './data/achievement';
 import {
   AchievementTypes,
@@ -27,9 +27,9 @@ const LeftMenu = ({ selected }) => {
         }
         return (
           <div className={className} key={achievement.type}>
-            <a href={generateAchievementUrl(achievement.type)}>
+            <Link to={generateAchievementUrl(achievement.type)}>
               {achievement.name}
-            </a>
+            </Link>
           </div>
         );
       })}
@@ -132,10 +132,6 @@ const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
   useEffect(() => {
     setNavStyle(1);
     setIsAnchorNavFixed(false);
-  }, [type, page]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
   }, [type, page]);
 
   return (
