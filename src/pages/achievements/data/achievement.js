@@ -13,7 +13,7 @@ export const generateAchievementHeaderData = () => ({
   },
   cover: {
     img: {
-      src: require(`@/assets/achievement/special@2x.png`),
+      src: require(`@/assets/achievement/header@2x.png`),
     },
     txt: {
       children: 'Research Findings',
