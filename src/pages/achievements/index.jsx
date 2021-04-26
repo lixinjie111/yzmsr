@@ -134,6 +134,10 @@ const AchievementList = ({ setNavStyle, setIsAnchorNavFixed, isMobile }) => {
     setIsAnchorNavFixed(false);
   }, [type, page]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <div id="detail" className="home-page-wrapper">
